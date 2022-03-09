@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 1</title>
+</head>
+<body>
+    <h1>Output is in console section</h1>
+    
+
+    <script>
+        let a = {
+            constructor = function(age,name){
+                console.log(`age:${age}; name: ${name}`);
+            },
+            name: 'pradeep',
+            to: ()=>{return this.name},
+            arrow :()=>{
+                console.log('arrow');
+                return 'text'
+            },
+            getName: function (){
+                return this.name;
+            }
+            
+        }
+        console.log(a.to());
+    
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Forms</title>
+
+    <style>
+        /* css here  */
+        h1{
+            text-align: center;
+        }
+        main{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        fieldset{
+            display: inline-block;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            width: 45%;
+            min-width: 250px;
+            max-width: 300px;
+            gap: 10px;
+            background-image: linear-gradient(rgb(243, 243, 227),rgb(250, 231, 231), rgb(214, 214, 245));
+        }
+        form div{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        section{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            min-width: 250px;
+            max-width: 300px;
+            width: 40%;
+            text-align: left;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>HTML Forms</h1>
+    <fieldset>
+        <legend>Personal Information</legend>
+        <main>
+            <form action="" >
+                <div>
+                    <label for="name">Full Name</label>
+                    <input type="text" name="name" required>
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" required>
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" name="password" required>
+                </div>
+    
+                <p>Select Country</p>
+                <div class="country">
+                    <label for="india">India</label>
+                    <input type="radio" id="india" name="country" value="India" required>
+                    <label for="usa">USA</label>
+                    <input type="radio" id="usa" name="country" value="USA" required>
+                </div>
+                <div>
+                    <p>Select Gender</p>
+                    <select name="gender" id="gender" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="rememberMe">Remember Me</label>
+                    <input type="checkbox" name="rememberMe" id="rememberMe" value="checked" required>
+                </div>
+                <input type="submit" value="Submit" id="submit"> 
+            </form>
+    
+            <section style="display: none;">
+                <!-- Result displayed here -->
+                <p id="nameR">Full Name: </p>
+                <p id="emailR">Email: </p>
+                <p id="countryR">Country: </p>
+                <p id="genderR">Gender: </p>
+                <button id="clear" style="display: none;">Clear</button>
+            </section>
+        </main>
+    </fieldset>
+    
+     
+
+    <script>
+        // script here
+        let form = document.querySelector('form');
+        let name = document.getElementById('nameR');
+        let email = document.getElementById('emailR');
+        let country = document.getElementById('countryR');
+        let gender = document.getElementById('genderR');
+        let clear = document.getElementById('clear');
+        let section = document.querySelector('section');
+
+        let submitBtn = document.getElementById("submit");
+        submitBtn.addEventListener('click', (e)=>{
+            e.preventDefault();
+            onSubmit();
+        })
+
+        function onSubmit(){
+            section.style.display = 'flex';
+            name.innerText += form.name.value;
+            email.innerText += form.email.value;
+            gender.innerText += form.gender.value;
+            country.innerText += form.country.value;
+            clear.style.display = 'inline-block';
+        }
+        
+        clear.addEventListener('click',()=>location.reload());
+
+        
+    </script>
+</body>
+</html>

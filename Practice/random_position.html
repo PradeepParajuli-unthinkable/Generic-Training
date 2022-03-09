@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Position</title>
+
+    <style>
+        body{
+            /* position: absolute; */
+            width: 100vw;
+            height: 100vh;
+            background-image: linear-gradient(rgb(1, 0, 7),rgb(0, 0, 48),rgb(0, 0, 83));
+        }
+        h1{
+            text-align: center;
+            color: aliceblue;
+        }
+        section{
+            width: 90%;
+            height: 80%;
+            padding: auto;
+        }
+        section div{
+            background-color: rgba(253, 253, 253, 0.185);
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+
+            position: absolute;
+        }
+        button{
+            position: absolute;
+            /* margin-top: 40%; */
+            margin-left: 40%; 
+            width: 100px;
+            height: 50px;
+        }
+        .moon{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-image: linear-gradient(white,rgb(233, 231, 231),rgb(190, 189, 189),rgb(172, 170, 170));
+            left: 80%;
+            border-radius: 50%;
+            transform: rotate(-30deg);
+            z-index: -1;
+        }
+        .moon div{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgb(1, 0, 7),rgb(1, 0, 7),rgb(0, 0, 48));
+            left: 30%;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random position</h1>
+    <div class="moon"><div></div></div>
+    <section>
+    </section>
+ 
+    <button id="stop">Stop</button>
+
+    <script>
+        let section = document.querySelector('section');
+        function randPosition(){
+            return Math.round(Math.random()*100);
+        }
+        const interval = setInterval(() => {
+            let left = randPosition();
+            let top = randPosition();
+            // console.log(`left:${left}; top:${top};`)
+            section.innerHTML+=(`<div style="left:${left}%; top:${top}%";></div>`);
+        }, 100);
+        document.getElementById("stop").addEventListener('click',()=>{console.log("stop");clearInterval(interval)})
+
+    </script> 
+</body>
+</html.

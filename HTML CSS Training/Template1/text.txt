@@ -1,0 +1,5 @@
+Required files are:
+2 div's
+
+div1-> h1, hr, p, button
+div2-> 2xdiv-> h3|| img, btn 1, btn2

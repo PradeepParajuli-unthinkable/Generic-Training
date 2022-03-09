@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --shadow: rgb(243, 247, 224) 3px 2px 10px;
+    
+}
+
+body{
+    font-family: 'Ubuntu', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    /* background-color: rgb(177, 163, 163); */
+    /* text-align: justify; */
+    text-align: justify;
+    /* padding: auto; */
+    background-image: linear-gradient(rgb(90, 175, 150),  rgb(146, 182, 230));
+    overflow-x: hidden;
+}
+
+ /* left side div containing information */
+ .info{
+     position: fixed;
+     background-color: white;
+     width: 250px;
+     height: auto;
+     padding: 20px;
+
+     border-radius: 20px;
+     justify-content: center;
+     margin: 40px 5%;
+     float: left;
+     box-shadow: var(--shadow);
+     /* align-items: center; */
+     /* left: 10%;
+     top: 10%; */
+     /* box-shadow: rgb(214, 213, 213) 3px 2px 9px; */
+ }
+ .info h1{
+     color: rgb(70, 143, 74);
+     text-align: center;
+ }
+.info hr{
+    /* position: absolute; */
+    width: 40%;
+    height: 3px;
+    background-color: gray;
+    margin: 10px 25%;
+}
+ /* Buttons */
+.primary-btn{
+    background-color: green;
+    border-radius: 20px;
+    width: 75%;
+    height: 30px;
+    color: white;
+    margin: 10px auto 0px auto;
+    display: flow-root;
+}
+.secondary-btn{
+    background-color: rgb(41, 13, 94);
+    border-radius: 20px;
+    width: 75%;
+    height: 30px;
+    color: white;
+    margin: 10px auto 0px auto;
+    display: flow-root;
+}
+.primary-btn:hover{
+    box-shadow: rgb(145, 145, 145) -1px -1px 5px inset;
+    background-color: rgb(255, 233, 205);
+    font-weight: bold;
+    color: green;
+}
+.secondary-btn:hover{
+    box-shadow: rgb(145, 145, 145) -1px -1px 5px inset;
+    background-color: rgb(255, 228, 196);
+    font-weight: bold;
+    color: rgb(41, 13, 94);;
+}
+/* card div  */
+.card-container{
+    /* position: absolute; */
+    /* left: 50%;
+    top: 10%; */
+    /* background-color: rgba(127, 255, 212, 0.24); */
+    width: 50%;
+    margin: 40px 5%;
+    float: right;
+}
+.card{
+    /* position: relative; */
+    width: 160px;
+    height: 350px;
+    /* background-color: aquamarine; */
+    float: left;
+    margin-left: 50px;
+    margin-bottom: 50px;
+
+    border-radius:  20px 20px 10px 10px;
+    text-align: center;
+    
+    box-shadow: var(--shadow);
+    background-color: white;
+
+}
+.card .card-name{
+    background-color: rgb(123, 123, 204);
+    width: 100%;
+    border-radius:  20px 20px 0px 0px;
+}
+.card .card-name h3{
+    color: white;
+    font-size: 1.2em;
+}
+.card img{
+    height: 60%; 
+}
+
+
+
+
+/* for smaller screen  */
+@media only screen and (max-width:700px) {
+    body{
+        align-items: center;
+    }
+    .info{
+        position: relative;
+        margin: 10px 30%;
+        float: none;
+    }
+    .card-container{
+        float: none;
+        margin-left: 30%;
+    }
+}
